@@ -56,3 +56,10 @@ SELECT * FROM customers AS c
 RIGHT JOIN orders AS o
 ON c.id = o.customer_id
 WHERE c.id IS NULL
+
+-- RIGHT ANTI JOIN EFFECT USING LEFT JOIN (JUST NEED TO SWITCH THE TABLE ORDER)
+
+SELECT * FROM orders AS o
+LEFT JOIN customers AS c 
+ON c.id = o.customer_id
+WHERE c.id IS NULL
