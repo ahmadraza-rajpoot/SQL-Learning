@@ -40,3 +40,19 @@ SELECT * FROM customers
 FULL JOIN orders
 ON id = customer_id
 
+
+
+----- LEFT ANTI JOIN
+
+SELECT *
+FROM customers AS c
+LEFT JOIN orders AS o
+ON c.id = o.customer_id
+WHERE o.customer_id IS NULL
+
+--- RIGHT ANTI JOIN
+
+SELECT * FROM customers AS c
+RIGHT JOIN orders AS o
+ON c.id = o.customer_id
+WHERE c.id IS NULL
