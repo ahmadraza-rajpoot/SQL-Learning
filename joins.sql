@@ -63,3 +63,14 @@ SELECT * FROM orders AS o
 LEFT JOIN customers AS c 
 ON c.id = o.customer_id
 WHERE c.id IS NULL
+
+-- FULL JOIN AND JULL ANTI JOIN
+
+SELECT * FROM customers
+FULL JOIN orders
+ON id = customer_id
+WHERE customer_id IS NOT NULL AND id IS NOT NULL
+
+SELECT * FROM customers
+INNER JOIN orders
+ON id = customer_id
