@@ -74,3 +74,10 @@ WHERE customer_id IS NOT NULL AND id IS NOT NULL
 SELECT * FROM customers
 INNER JOIN orders
 ON id = customer_id
+
+
+
+-- CROSS JOIN WHEN YOU WANT TO SEE ALL POSSIBLE COMBINATION
+
+SELECT * FROM customers
+CROSS JOIN orders
