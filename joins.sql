@@ -81,3 +81,33 @@ ON id = customer_id
 
 SELECT * FROM customers
 CROSS JOIN orders
+
+
+--- JOINING MULTIPLE TABLES
+
+USE SalesDB	
+
+
+SELECT * FROM sales.Employees;
+
+SELECT * FROM sales.Orders;
+SELECT * FROM sales.Customers;
+SELECT * FROM sales.Products;
+
+SELECT  
+
+	o.OrderID,
+	c.FirstName,
+	p.Product,
+	o.Sales,
+	p.Price,
+	e.FirstName AS 'SALES_PERSON'
+
+FROM sales.Orders AS o
+	
+LEFT JOIN sales.Customers AS c
+ON o.CustomerID = c.CustomerID
+LEFT JOIN sales.Products AS p
+ON o.ProductID = p.ProductID
+LEFT JOIN sales.Employees AS e
+ON o.SalesPersonID = e.EmployeeID
