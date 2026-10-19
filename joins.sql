@@ -111,3 +111,20 @@ LEFT JOIN sales.Products AS p
 ON o.ProductID = p.ProductID
 LEFT JOIN sales.Employees AS e
 ON o.SalesPersonID = e.EmployeeID
+
+
+
+--- VERTICAL JOINING OF TABLES. UNION
+
+
+SELECT
+	FirstName,
+	LastName
+FROM Sales.Customers
+
+UNION
+
+SELECT
+	FirstName,
+	LastName
+FROM Sales.Employees
