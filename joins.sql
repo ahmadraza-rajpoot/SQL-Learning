@@ -128,3 +128,32 @@ SELECT
 	FirstName,
 	LastName
 FROM Sales.Employees
+
+
+-- EXCEPT ---
+
+SELECT
+c.FirstName,
+c.LastName
+FROM Sales.Customers AS c
+EXCEPT
+SELECT
+e.FirstName,
+e.LastName
+FROM Sales.Employees AS e
+
+
+--- INTERSECT , to get only rows which are available in both tables
+
+SELECT
+	FirstName,
+	LastName
+FROM Sales.Customers
+
+INTERSECT
+
+SELECT
+	FirstName,
+	LastName
+FROM Sales.Employees
+
